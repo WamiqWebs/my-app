@@ -23,7 +23,7 @@ export default function Home() {
     { id: 12, image: "/wgloves.png", title: "white gloves", description: "Smart Design.", price: "₹800", rating: 8.6 },
     { id: 13, image: "/nwatch.png", title: "watch", description: "watch.", price: "₹1800", rating: 6.6 },
     { id: 14, image: "/rhat.png", title: "Red Hat", description: "great color and design.", price: "₹20", rating: 10 },
-    { id: 15, image: "/cocaine.png", title: "Cocaine", description: "ek baar pee or fr khulke jee.", price: "₹30", rating: 9.9 },
+    { id: 15, image: "/bcoat.png", title: "Coat", description: "Gracefull Coat.", price: "₹300", rating: 9.9 },
     { id: 16, image: "/bjacket.png", title: "Blue Jacket", description: "great cloth jacket.", price: "₹30", rating: 9.9 },
     { id: 17, image: "/blackjacket.png", title: "Black Jacket", description: "all size awailable.", price: "₹30", rating: 7.2 },
     { id: 18, image: "/blackandjacket.png", title: "black and Jacket", description: "ek baar pee or fr khulke jee.", price: "₹50", rating: 9.9 },
@@ -68,7 +68,7 @@ export default function Home() {
     { id: 19, image: "/redt-shirt.png", title: "Red Shirt", description: "shirt itni aachi,log apki gndi shkl bhooljayn.", price: "₹1200" },
     { id: 20, image: "/shoes.png", title: "Running Shoes", description: "pehenke apni zimdedaryon se dur bhaagjayn.", price: "₹1500" },
     { id: 21, image: "/jeans.png", title: "Jeans", description: "Stylish and comfortable jeans.", price: "₹800" },
-    { id: 22, image: "/gun.png", title: "Gun", description: "One perfect shot , and the man is down.", price: "₹1100" },
+    { id: 22, image: "/bcoat.png", title: "Coat", description: "Gracefull Coat.", price: "₹1100" },
     { id: 23, image: "/jogger.png", title: "Jogger", description: "Stylish and comfortable,perfect for kicking someone.", price: "₹200" },
     { id: 24, image: "/blackcap.png", title: "cap", description: "Premium Quality..", price: "₹300" },
   ];
