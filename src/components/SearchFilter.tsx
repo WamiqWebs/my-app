@@ -38,35 +38,37 @@ export default function SearchFilter({ productsitems }: Props) {
 
   const hasHydrated = useHasHydrated();
   if (!hasHydrated) return null;
-  function handleSerach(){
-    if(input === ""){
+  function handleSerach() {
+    if (input === "") {
       alert("Please Enter Something");
       return;
     };
-    if(productsitems.length > 0){
+    if (productsitems.length > 0) {
       alert("No Products Found");
     };
   }
 
   return (
     <>
-      <div className="bg-gray-900 flex justify-center items-center p-2 gap-2 ">
-        <input
-          className="w-[50%] md:w-[60%] p-2 border-2 border-white rounded bg-gray-800 text-white"
-          placeholder="Search..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button className="px-3 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded"onClick={handleSerach}>Search</button>
+      <div className="fixed top-0 left-0 w-full">
+        <div className="fixed flex justify-center items-center p-2 gap-2 w-full bg-gray-900 shadow shadow-purple-400 z-50">
+          <input
+            className="w-[50%] md:w-[60%] p-2 border-2 border-white rounded bg-gray-800 text-white"
+            placeholder="Search..."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <button className="px-3 py-2 bg-white hover:bg-white/80 text-white rounded" onClick={handleSerach}>🔍</button>
+        </div>
       </div>
 
       <div className="text-white">
         {filteredProducts.map((item) => (
           <div
             key={item.id}
-            className="p-4 bg-gray-800 rounded my-2 flex flex-col items-center"
+            className="px-4 py-2 shadow-2xl shadow-purple-600 bg-gray-800 rounded flex flex-col items-center"
           >
-            <img src={item.image} className="w-[30%] mb-2" />
+            <img src={item.image} className="w-[35%] mb-2 mt-25 rounded" />
             <h1>{item.title}</h1>
             <p>{item.description}</p>
             <p>{item.price}</p>
@@ -74,28 +76,31 @@ export default function SearchFilter({ productsitems }: Props) {
 
             {/* ❤️ Favourite */}
             <button
-              onClick={() => toggleFavourite(String(item.id))}
+              onClick={() => toggleFavourite(Number(item.id))}
               className="mt-2"
             >
-              {favourites.includes(String(item.id)) ? "💖" : "🤍"}
+              {favourites.includes(Number(item.id)) ? "💖" : "🤍"}
             </button>
 
             {/* 🛒 Cart */}
-            {cart[String(item.id)] ? (
-              <button
-                className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded-lg mt-3 w-[10%]"
-                onClick={() => toggleCart(String(item.id))}
-              >
-                ✔️ Done
-              </button>
-            ) : (
-              <button
-                className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg mt-3 w-[20%]"
-                onClick={() => toggleCart(String(item.id))}
-              >
-                ADD TO CART
-              </button>
-            )}
+           {cart[Number(item.id)] ? (
+  <button
+    className="bg-blue-400 hover:bg-blue-500 text-white px-4 rounded-lg mt-3 
+               w-[50%] md:w-[20%] h-10 flex items-center justify-center"
+    onClick={() => toggleCart(String(item.id))}
+  >
+    ✔️
+  </button>
+) : (
+  <button
+    className="bg-purple-500 hover:bg-purple-600 text-white px-4 rounded-lg mt-3 
+               w-[50%] md:w-[20%] h-10 flex items-center justify-center"
+    onClick={() => toggleCart(Number(item.id))}
+  >
+    ADD TO CART
+  </button>
+)}
+
           </div>
         ))}
       </div>

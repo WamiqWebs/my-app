@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface FavouriteStore {
-  favourites: string[];
+  favourites: Number[];
   toggleFavourite: (id: number | string) => void;
   isFavourite: (id: number | string) => boolean;
 }
@@ -13,7 +13,7 @@ export const useFavouriteStore = create<FavouriteStore>()(
       favourites: [],
       toggleFavourite: (id) =>
         set((state) => {
-          const safeId = String(id);
+          const safeId = Number(id);
           const exists = state.favourites.includes(safeId);
           return {
             favourites: exists
@@ -21,7 +21,7 @@ export const useFavouriteStore = create<FavouriteStore>()(
               : [...state.favourites, safeId],
           };
         }),
-      isFavourite: (id) => get().favourites.includes(String(id)),
+      isFavourite: (id) => get().favourites.includes(Number(id)),
     }),
     {
       name: "favourites-storage", // localStorage key

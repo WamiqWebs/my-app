@@ -58,7 +58,7 @@ export default function Products({
   return (
     <>
       {loading ? (
-        <div className="animate-pulse p-4 bg-purple-200 rounded-lg min-h-[300px] flex flex-col items-center justify-center gap-3">
+        <div className="animate-pulse p-4 mt-[-40] bg-purple-200 rounded-lg min-h-[300px] flex flex-col items-center justify-center gap-3">
           <div className="w-full h-40 bg-purple-300 rounded"></div>
           <div className="w-full h-6 bg-purple-300 rounded"></div>
           <div className="w-1/2 h-4 bg-purple-300 rounded"></div>
@@ -67,7 +67,7 @@ export default function Products({
       ) : (
         <>
           {/* Products Grid */}
-          <div className="text-center gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-5">
+          <div className="text-center gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-5 mb-5 px-5">
             {items.map((product) => (
               <div
                 key={product.id}
@@ -159,19 +159,19 @@ export default function Products({
                         toggleFavourite(String(openCard.id));
                       }}
                       className={`text-3xl transition-transform duration-200 ${
-                        favourites.includes(String(openCard.id))
+                        favourites.includes(Number(openCard.id))
                           ? "scale-125"
                           : "scale-100"
                       }`}
                     >
                       <span
                         className={`inline-block transition-colors duration-200 ${
-                          favourites.includes(String(openCard.id))
+                          favourites.includes(Number(openCard.id))
                             ? "text-pink-500 animate-pulse"
                             : "text-gray-400"
                         }`}
                       >
-                        {favourites.includes(String(openCard.id))
+                        {favourites.includes(Number(openCard.id))
                           ? "💗"
                           : "🤍"}
                       </span>

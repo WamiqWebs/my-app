@@ -35,8 +35,8 @@ export default function NewItems() {
 
   return (
     <>
-      <div className="p-6 bg-purple-600">
-        <div className="p-1 flex flex-col">
+      <div className=" bg-purple-600 rounded">
+        <div className="p-5 flex flex-col">
           <Link href="/" className="text-white hover:underline w-fit mb-2">
             ← Back to Home
           </Link>
@@ -44,14 +44,14 @@ export default function NewItems() {
             ← Fav Page
           </Link>
         </div>
-        <div className="text-center md:text-3xl md:font-bold text-red-500 gap-4">
+        <div className="text-center text-2xl font-medium md:text-3xl md:font-bold text-red-500 gap-4">
           New Items
         </div>
-
         <Products
           items={newProducts}
           color={false}
         />
+        
       </div>
     </>
   );

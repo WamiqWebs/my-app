@@ -26,10 +26,10 @@ export default function Favourites() {
   if (!hasHydrated) return null;
 
   const favouriteItems = allItems.filter((item: any) =>
-    favourites.includes(String(item.id))
+    favourites.includes(Number(item.id))
   );
   return (
-    <div className="p-4 bg-purple-400 min-h-screen">
+    <div className="p-4 bg-purple-400 min-h-screen mb-5 rounded">
       <div className="flex flex-col">
       <Link href="/" className="text-white hover:underline w-fit mb-2">
         ← Back to Home
@@ -42,7 +42,7 @@ export default function Favourites() {
       </Link>
       </div>
 
-      <h1 className="text-4xl font-bold mb-4">Favourites</h1>
+      <h1 className=" text-2xl text-center font-medium md:text-3xl md:font-bold mb-4">Favourites</h1>
 
       {favouriteItems.length === 0 && (
         <p className="text-xl text-black text-center">No favourites yet.</p>
@@ -64,7 +64,7 @@ export default function Favourites() {
               onClick={() => toggleFavourite(String(item.id))}
               className="text-2xl mt-2 "
             >
-              {favourites.includes(String(item.id)) ? "💖" : "🤍"}
+              {favourites.includes(Number(item.id)) ? "💖" : "🤍"}
             </button>
 
             {/* 🛒 Cart */}
